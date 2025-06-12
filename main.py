@@ -12,11 +12,10 @@ if st.button("Detect"):
     if user_input.strip() == "":
         st.warning("Please enter some text to analyze.")
     else:
-        # Dummy placeholder response (replace with real backend call later)
+        
         st.info("Sending to backend model...")
         
-        # Example static result (to be replaced with Flask model response)
-        # Replace this block with actual API call to Flask backend
+        
         import random
         prediction = random.choice(["Real", "Fake"])
 
