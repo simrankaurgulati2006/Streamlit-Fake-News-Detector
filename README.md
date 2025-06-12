@@ -11,7 +11,7 @@
 ## Demo
 
 
-> *(Add a screenshot of your app in the `assets/` folder and update this path)*
+
 
 ---
 
