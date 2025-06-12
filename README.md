@@ -9,8 +9,8 @@
 ---
 
 ## Demo
-[!Streamlit](./demo%20image.png)
 
+[!Demo Image](./demoimage.png)
 
 
 ---
