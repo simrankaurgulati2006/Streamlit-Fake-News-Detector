@@ -9,7 +9,7 @@
 ---
 
 ## Demo
-
+[!Streamlit](./demo%20image.png)
 
 
 
