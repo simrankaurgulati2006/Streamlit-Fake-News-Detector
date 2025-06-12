@@ -1,39 +1,21 @@
 import streamlit as st
+import random
 
 st.set_page_config(page_title="Fake News Detector", layout="centered")
-st.title("🕵️ Fake News Detector")
-st.write("Enter a news article or headline below to detect whether it's fake or real.")
+st.title("Fake News Detector")
 
-
-user_input = st.text_area("📰 Paste headline or article text here:", height=200)
-
+enter_input = st.text_area("Enter headline or article of news", height=200)
 
 if st.button("Detect"):
-    if user_input.strip() == "":
-        st.warning("Please enter some text to analyze.")
+    if enter_input.strip() == "":
+        st.warning("Please enter")
     else:
-        
-        st.info("Sending to backend model...")
-        
-        
-        import random
-        prediction = random.choice(["Real", "Fake"])
+        with st.spinner("Analyzing news..."):
+            predicted_ans = random.choice(["Real", "Fake"])
+            st.session_state.predicted_ans = predicted_ans  # store in session
 
-        # Show result
-        if prediction == "Real":
-            st.success("✅ This news appears to be REAL.")
-        else:
-            st.error("🚨 This news appears to be FAKE.")
-
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #f5f7fa;
-        color: #1a1a1a;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+if "predicted_ans" in st.session_state:
+    if st.session_state.predicted_ans == "Real":
+        st.success("This News is Real")
+    else:
+        st.error("This news is Fake")
